@@ -17,8 +17,7 @@ namespace StudentLibrary.Data.Configurations
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.Property(x => x.GDate).IsRequired();
             builder.Property(x => x.TDate).IsRequired();
-            builder.HasOne<Student>().WithMany(x => x.Operations);
-            builder.HasOne<Book>().WithMany(x => x.Operations);
+            
 
         }
     }

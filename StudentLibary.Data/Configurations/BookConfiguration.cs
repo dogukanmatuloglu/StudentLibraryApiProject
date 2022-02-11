@@ -18,7 +18,7 @@ namespace StudentLibrary.Data.Configurations
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
             builder.Property(x => x.IsbnNo).IsRequired();
             builder.Property(x => x.Page).IsRequired();
-            builder.HasOne<Author>().WithMany(a => a.Books);
+        
             
             
 
