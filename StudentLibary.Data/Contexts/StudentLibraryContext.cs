@@ -11,7 +11,10 @@ namespace StudentLibrary.Data.Contexts
 {
     public class StudentLibraryContext:DbContext
     {
-    
+        public StudentLibraryContext(DbContextOptions<StudentLibraryContext> options) :base(options)
+        {
+
+        }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Student> Students { get; set; }

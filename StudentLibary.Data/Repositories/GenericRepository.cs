@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using StudentLibrary.Core.Repositories;
-
+using StudentLibrary.Data.Contexts;
 
 namespace StudentLibrary.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T: class
     {
-        private readonly DbContext _context;
-        public GenericRepository(DbContext context)
+        private readonly StudentLibraryContext _context;
+        public GenericRepository(StudentLibraryContext context)
         {
             _context = context;
         }

@@ -1,4 +1,5 @@
-﻿using StudentLibrary.Core.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using StudentLibrary.Core.Repositories;
 using StudentLibrary.Core.UnitOfWork;
 using StudentLibrary.Data.Contexts;
 using StudentLibrary.Data.Repositories;
@@ -12,7 +13,7 @@ namespace StudentLibrary.Data.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly StudentLibraryContext _context;
+        private readonly StudentLibraryContext _context ;
         private AuthorRepository _authorRepository;
         private BookRepository _bookRepository;
         private StudentRepository _studentRepository;

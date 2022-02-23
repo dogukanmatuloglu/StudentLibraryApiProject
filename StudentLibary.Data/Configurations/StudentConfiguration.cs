@@ -19,6 +19,7 @@ namespace StudentLibrary.Data.Configurations
             builder.Property(x => x.Surname).IsRequired().HasMaxLength(50);
             builder.Property(x => x.StudentNo).IsRequired();
             builder.Property(x => x.Class).IsRequired();
+      
         }
     }
 }

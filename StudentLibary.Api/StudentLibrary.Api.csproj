@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentLibary.Core\StudentLibrary.Core.csproj" />
+    <ProjectReference Include="..\StudentLibary.Data\StudentLibrary.Data.csproj" />
+    <ProjectReference Include="..\StudentLibary.Service\StudentLibrary.Service.csproj" />
+  </ItemGroup>
+
 </Project>

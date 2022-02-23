@@ -3,6 +3,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StudentLibrary.Core.Repositories;
+
+using StudentLibrary.Core.UnitOfWork;
+using StudentLibrary.Data.Contexts;
+using StudentLibrary.Data.Repositories;
+using StudentLibrary.Data.UnitOfWork;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +22,7 @@ namespace StudentLibary.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
+           
         }
 
         
@@ -29,10 +37,7 @@ namespace StudentLibary.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
