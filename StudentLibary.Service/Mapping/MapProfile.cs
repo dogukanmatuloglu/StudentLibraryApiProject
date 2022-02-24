@@ -16,6 +16,11 @@ namespace StudentLibrary.Service.Mapping
             CreateMap<AuthorAddDto, Author>();
             CreateMap<AuthorDto, Author>().ReverseMap();
             CreateMap<AuthorUpdateDto, Author>();
+
+            CreateMap<StudentDto, Student>().ReverseMap();
+            CreateMap<StudentUpdateDto, Student>();
+            CreateMap<StudentAddDto, Student>();
+
             
         }
     }
