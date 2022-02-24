@@ -15,7 +15,7 @@ namespace StudentLibrary.Core.Services
         Task AddAsync(StudentAddDto entitiy);
         Task UpdateAsync(StudentUpdateDto entity);
         Task DeleteAsync(StudentDto entity);
-        Task<int> CountAsync(Expression<Func<StudentDto, bool>> predicate);
-        Task<bool> AnyAsnc(Expression<Func<StudentDto, bool>> predicate);
+     Task<int> CountAsync(Expression<Func<StudentDto, bool>> predicate);
+        //   Task<bool> AnyAsnc(Expression<Func<StudentDto, bool>> predicate);
     }
 }

@@ -15,7 +15,7 @@ namespace StudentLibrary.Core.Services
         Task AddAsync(AuthorAddDto entitiy);
         Task UpdateAsync(AuthorUpdateDto entity);
         Task DeleteAsync(AuthorDto entity);
-        Task<int> CountAsync(Expression<Func<AuthorDto, bool>> predicate);
-        Task<bool> AnyAsnc(Expression<Func<AuthorDto, bool>> predicate);
+      Task<int> CountAsync(Expression<Func<AuthorDto, bool>> predicate);
+       // Task<bool> AnyAysnc(Expression<Func<AuthorDto, bool>> predicate);
     }
 }
