@@ -14,7 +14,7 @@ namespace StudentLibrary.Core.Services
         Task<IList<OperationDto>> GetAllAsync();
         Task AddAsync(OperationAddDto entitiy);
         Task UpdateAsync(OperationUpdateDto entity);
-        Task DeleteAsync(OperationDto entity);
+        Task DeleteAsync(int id);
      Task<int> CountAsync(Expression<Func<OperationDto, bool>> predicate);
         //  Task<bool> AnyAsnc(Expression<Func<OperationDto, bool>> predicate);
     }

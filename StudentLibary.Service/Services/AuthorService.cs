@@ -30,14 +30,14 @@ namespace StudentLibrary.Service.Services
 
        
 
-        public async Task<int> CountAsync(Expression<Func<AuthorDto, bool>> predicate)
+        public async Task<int> CountAsync(Expression<Func<AuthorDto, bool>> predicate=null)
         {
             return await _unitOfWork.Authors.CountAsync();
         }
 
-        public async Task DeleteAsync(AuthorDto entity)
+        public async Task DeleteAsync(int id)
         {
-           await _unitOfWork.Authors.DeleteAsync(_mapper.Map<Author>( entity));
+           await _unitOfWork.Authors.DeleteAsync(id);
            await _unitOfWork.SaveAsync();
         }
 

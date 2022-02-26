@@ -12,7 +12,7 @@ namespace StudentLibrary.Core.Repositories
         Task<T> GetById(int id);
         Task<IList<T>> GetAllAsync(Expression<Func<T, bool>> predicate=null, params Expression<Func<T, object>>[] includeProperties); 
         Task AddAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task DeleteAsync(int id);
         Task UpdateAsync(T entity);
         Task<int> CountAsync(Expression<Func<T, bool>> predicate=null);
         Task<bool> AnyAsnc(Expression<Func<T, bool>> predicate);

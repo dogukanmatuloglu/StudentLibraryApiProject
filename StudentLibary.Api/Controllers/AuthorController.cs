@@ -22,7 +22,7 @@ namespace StudentLibrary.Api.Controllers
 
         public async Task<IActionResult> GetAll()
         {
-           var authors= await _authorService.GetAllAsync();
+            var authors = await _authorService.GetAllAsync();
             return Ok(authors);
         }
         [HttpGet("{id}")]
@@ -31,10 +31,32 @@ namespace StudentLibrary.Api.Controllers
             var author = await _authorService.GetByIdAsync(id);
             return Ok(author);
         }
+        [Route("api/author/count")]
+        public async Task<IActionResult> Count()
+        {
+            int count =await _authorService.CountAsync();
+            return Ok(count);
+
+        }
         [HttpPost]
         public async Task<IActionResult> Create(AuthorAddDto authorAddDto)
         {
             await _authorService.AddAsync(authorAddDto);
+            return Created(string.Empty, authorAddDto);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(AuthorUpdateDto authorUpdateDto)
+        {
+            await _authorService.UpdateAsync(authorUpdateDto);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+            
+            await _authorService.DeleteAsync(id);
             return NoContent();
         }
     }

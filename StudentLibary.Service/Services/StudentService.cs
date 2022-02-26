@@ -32,9 +32,9 @@ namespace StudentLibrary.Service.Services
            return await _unitOfWork.Students.CountAsync();
         }
 
-        public async Task DeleteAsync(StudentDto entity)
+        public async Task DeleteAsync(int id)
         {
-          await  _unitOfWork.Students.DeleteAsync(_mapper.Map<Student>(entity));
+          await  _unitOfWork.Students.DeleteAsync(id);
           await  _unitOfWork.SaveAsync();
         }
 

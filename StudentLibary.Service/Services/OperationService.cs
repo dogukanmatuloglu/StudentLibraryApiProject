@@ -33,9 +33,9 @@ namespace StudentLibrary.Service.Services
           return await  _unitOfWork.Operations.CountAsync();
         }
 
-        public async Task DeleteAsync(OperationDto entity)
+        public async Task DeleteAsync(int id)
         {
-           await _unitOfWork.Operations.DeleteAsync(_mapper.Map<Operation>(entity));
+           await _unitOfWork.Operations.DeleteAsync(id);
             await _unitOfWork.SaveAsync();
         }
 

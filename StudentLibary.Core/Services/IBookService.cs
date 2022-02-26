@@ -14,7 +14,7 @@ namespace StudentLibrary.Core.Services
         Task<IList<BookDto>> GetAllAsync();
         Task AddAsync(BookAddDto entitiy);
         Task UpdateAsync(BookUpdateDto entity);
-        Task DeleteAsync(BookDto entity);
+        Task DeleteAsync(int id);
         Task<int> CountAsync(Expression<Func<BookDto, bool>> predicate);
         //Task<bool> AnyAsnc(Expression<Func<BookDto, bool>> predicate);
     }

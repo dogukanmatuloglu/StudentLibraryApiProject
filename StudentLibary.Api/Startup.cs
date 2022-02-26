@@ -46,7 +46,7 @@ namespace StudentLibary.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute("Route", "api/{controller}/{action}/{id?}");
             });
         }
     }

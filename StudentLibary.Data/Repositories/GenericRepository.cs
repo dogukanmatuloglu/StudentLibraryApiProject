@@ -33,9 +33,11 @@ namespace StudentLibrary.Data.Repositories
 
         }
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteAsync(int id)
         {
-            await Task.Run( ()=> { _context.Set<T>().Remove(entity); });
+           var deletedEntity= await _context.Set<T>().FindAsync(id);
+            //await Task.Run( ()=> { _context.Set<T>().Remove(entity); });
+            _context.Set<T>().Remove(deletedEntity);
         }
 
         public async Task<IList<T>> GetAllAsync(System.Linq.Expressions.Expression<Func<T, bool>> predicate=null, params System.Linq.Expressions.Expression<Func<T, object>>[] includeProperties)
