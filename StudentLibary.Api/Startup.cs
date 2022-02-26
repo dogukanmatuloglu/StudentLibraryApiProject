@@ -9,6 +9,7 @@ using StudentLibrary.Core.UnitOfWork;
 using StudentLibrary.Data.Contexts;
 using StudentLibrary.Data.Repositories;
 using StudentLibrary.Data.UnitOfWork;
+using StudentLibrary.Service.Mapping;
 using StudentLibrary.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,7 @@ namespace StudentLibary.Api
             services.AddScoped<IBookService, BookService>();
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IOperationService, OperationService>();
+            services.AddAutoMapper(typeof(MapProfile));
            
         }
 

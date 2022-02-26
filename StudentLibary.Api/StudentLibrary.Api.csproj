@@ -14,8 +14,4 @@
     <ProjectReference Include="..\StudentLibary.Service\StudentLibrary.Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
