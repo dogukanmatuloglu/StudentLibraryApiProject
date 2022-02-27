@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudentLibrary.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
@@ -31,10 +31,10 @@ namespace StudentLibrary.Api.Controllers
             var author = await _authorService.GetByIdAsync(id);
             return Ok(author);
         }
-        [Route("api/author/count")]
+       
         public async Task<IActionResult> Count()
         {
-            int count =await _authorService.CountAsync();
+            int count = await _authorService.CountAsync();
             return Ok(count);
 
         }

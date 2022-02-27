@@ -43,10 +43,11 @@ namespace StudentLibary.Api
             }
 
             app.UseRouting();
+            app.UseHttpsRedirection();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("Route", "api/{controller}/{action}/{id?}");
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
