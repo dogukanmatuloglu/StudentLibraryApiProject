@@ -23,7 +23,7 @@ namespace StudentLibary.Api
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<StudentLibraryContext>();
             services.AddScoped<IAuthorService, AuthorService>();
