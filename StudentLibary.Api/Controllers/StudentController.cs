@@ -19,6 +19,26 @@ namespace StudentLibrary.Api.Controllers
             _studentService = studentService;
         }
 
-        
+        public async Task<IActionResult> GetAll()
+        {
+            var students = await _studentService.GetAllAsync();
+            return Ok(students);
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var student = await _studentService.GetByIdAsync(id);
+            return Ok(student);
+        }
+
+        public async Task<IActionResult> Count()
+        {
+            int count = await _studentService.CountAsync();
+            return Ok(count);
+
+        }
+     
+
+
     }
 }

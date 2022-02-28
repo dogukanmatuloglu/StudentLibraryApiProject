@@ -27,7 +27,7 @@ namespace StudentLibrary.Service.Services
            await _unitOfWork.SaveAsync();
         }
 
-        public async Task<int> CountAsync(Expression<Func<StudentDto, bool>> predicate)
+        public async Task<int> CountAsync(Expression<Func<StudentDto, bool>> predicate=null)
         {
            return await _unitOfWork.Students.CountAsync();
         }
