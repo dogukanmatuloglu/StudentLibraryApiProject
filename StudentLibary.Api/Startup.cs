@@ -2,6 +2,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StudentLibrary.Core.Repositories;
@@ -32,6 +33,7 @@ namespace StudentLibary.Api
             services.AddScoped<IStudentService, StudentService>();
             services.AddScoped<IOperationService, OperationService>();
             services.AddAutoMapper(typeof(MapProfile));
+            services.Configure<ApiBehaviorOptions>(x => x.SuppressModelStateInvalidFilter = true);
            
         }
 
