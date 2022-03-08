@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StudentLibrary.Api.Filters;
 using StudentLibrary.Core.Dtos;
 using StudentLibrary.Core.Services;
 using System;
@@ -39,6 +40,7 @@ namespace StudentLibrary.Api.Controllers
 
         }
         [HttpPost]
+        [ValidationFilter]
         public async Task<IActionResult> Create(AuthorAddDto authorAddDto)
         {
             await _authorService.AddAsync(authorAddDto);
@@ -46,6 +48,7 @@ namespace StudentLibrary.Api.Controllers
         }
 
         [HttpPut]
+        [ValidationFilter]
         public async Task<IActionResult> Update(AuthorUpdateDto authorUpdateDto)
         {
             await _authorService.UpdateAsync(authorUpdateDto);

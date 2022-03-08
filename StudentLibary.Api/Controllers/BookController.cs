@@ -46,7 +46,7 @@ namespace StudentLibrary.Api.Controllers
             await _bookService.AddAsync(bookAddDto);
             return Created(string.Empty, bookAddDto);
         }
-
+        [ValidationFilter]
         [HttpPut]
         public async Task<IActionResult> Update(BookUpdateDto bookUpdateDto)
         {
